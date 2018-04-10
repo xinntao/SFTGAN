@@ -1,10 +1,10 @@
 # CVPR18-SFTGAN
 
-### [[PyTorch(under construction)]]()   [[project page]](http://mmlab.ie.cuhk.edu.hk/projects/SFTGAN/)   [[paper]](https://arxiv.org/abs/1804.02815)
+### [[PyTorch(Under Construction)]](https://github.com/xinntao/CVPR18-SFTGAN)   [[project page]](http://mmlab.ie.cuhk.edu.hk/projects/SFTGAN/)   [[paper]](https://arxiv.org/abs/1804.02815)
 
 Torch implementation for [Recovering Realistic Texture in Image Super-resolution by Deep Spatial Feature Transform](https://arxiv.org/abs/1804.02815)
 
-Training codes is coming soon...
+Training code is coming soon...
 
 ### Table of Contents
 1. [Introduction](#introduction)
@@ -13,10 +13,12 @@ Training codes is coming soon...
 
 ### Introduction
 We have explored the use of semantic segmentation maps as categorical prior for SR.
+
 A novel Spatial Feature Transform (SFT) layer has been proposed to efficiently incorporate the categorical conditions into a CNN network.
+
 For more details, please check out our [project webpage](http://mmlab.ie.cuhk.edu.hk/projects/SFTGAN/) and [paper](https://arxiv.org/abs/1804.02815).
 
-<img src='imgs/network_structure.png.png' align="center">
+<img src='imgs/network_structure.png' align="center">
 
 ### Citation
 
@@ -30,4 +32,4 @@ If you find the code and datasets useful in your research, please cite:
 
 ### Requirements and Dependencies
 - Torch
-- Cuda & Cudnn
+- cuda & cudnn
