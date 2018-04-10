@@ -1,0 +1,14 @@
+*.pyc
+*.t7
+*.caffemodel
+*.png
+*.mat
+*.npy
+
+# latex
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
