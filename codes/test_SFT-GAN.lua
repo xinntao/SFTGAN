@@ -10,7 +10,7 @@ local matlab_functions = require './util/matlab_functions'
 local utils = require './util/utils'
 
 local model_name = 'sft-gan'
-local test_img_folder = 'OST300'
+local test_img_folder = 'samples'
 
 local model_path = '../models/'..model_name..'.t7'
 local test_img_path = '../data/'..test_img_folder

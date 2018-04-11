@@ -8,13 +8,15 @@ require 'cudnn'
 require 'paths'
 require 'image'
 require './util/cudnn_convert_custom'
+local matlab_functions = require './util/matlab_functions'
 
-local model_path = '../models/OutdoorSceneSeg_bic_iter_30000.t7'
-local test_img_folder = '../data/OutdoorSceneTest300_bicx4'
-local save_prob_path = '../data/save_prob'
-local save_byteimg_path = '../data/save_byteimg'
-local save_colorimg_path = '../data/save_colorimg'
+local model_path = '../models/OutdoorSceneSeg_bic_iter_30000.t7' -- model
+local test_img_folder_name = 'samples' -- HR images
 
+local test_img_folder = '../data/'..test_img_folder_name
+local save_prob_path = '../data/'..test_img_folder_name..'_segprob' -- save probability maps
+local save_byteimg_path = '../data/'..test_img_folder_name..'_byteimg' -- save segmentation annotations
+local save_colorimg_path = '../data/'..test_img_folder_name..'_colorimg' -- save segmentaion coloful results
 -- create folders
 if not paths.dirp(save_prob_path) then
     paths.mkdir(save_prob_path)
@@ -56,6 +58,9 @@ for f in paths.files(test_img_folder, '.+%.%a+') do
     local img_base_name = paths.basename(f, ext)
     print(idx, img_base_name)
     local img = image.load(paths.concat(test_img_folder, f), 3, 'float')
+    -- get bicubic-ed image (the implementation is slow, you can use matlab to generate first)
+    img = matlab_functions.imresize(img, 1/4, true)
+    img = matlab_functions.imresize(img, 4, true)
     img = img:index(1,torch.LongTensor({3,2,1})) -- BGR
     img = img * 255
     img[1]:add(- 103.939)
@@ -65,7 +70,7 @@ for f in paths.files(test_img_folder, '.+%.%a+') do
     local output = net:forward(input)
     output = output:float():contiguous()
     -- prob
-    torch.save(paths.concat(save_prob_path, img_base_name..'.t7'), output)
+    torch.save(paths.concat(save_prob_path, img_base_name..'_bic.t7'), output)
     -- byte img
     output = output:squeeze()
     _, argmax = torch.max(output, 1)
