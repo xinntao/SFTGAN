@@ -1,9 +1,12 @@
 # CVPR18-SFTGAN
+Torch implementation for [Recovering Realistic Texture in Image Super-resolution by Deep Spatial Feature Transform](https://arxiv.org/abs/1804.02815).
 
-### [[PyTorch - BasicSR]](https://github.com/xinntao/BasicSR)   [[project page]](http://mmlab.ie.cuhk.edu.hk/projects/SFTGAN/)   [[paper]](https://arxiv.org/abs/1804.02815)
 
+### [[project page]](http://mmlab.ie.cuhk.edu.hk/projects/SFTGAN/)   [[paper]](https://arxiv.org/abs/1804.02815)
 
-Torch implementation for [Recovering Realistic Texture in Image Super-resolution by Deep Spatial Feature Transform](https://arxiv.org/abs/1804.02815)
+### :stuck_out_tongue_winking_eye: [PyTorch - BasicSR](https://github.com/xinntao/BasicSR)    
+We will provide Pytorch version of SFTGAN later.
+[BasicSR](https://github.com/xinntao/BasicSR) contains basic codes for Super-Resolution. It now has provided basic SR models like SRResNet and SRGAN.
 
 Training code is coming soon...
 
@@ -43,3 +46,7 @@ If you find the code and datasets useful in your research, please cite:
         title = {Recovering Realistic Texture in Image Super-resolution by Deep Spatial Feature Transform},
         booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
         year = {2018}
+
+
+### :satisfied: Image Viewer
+If you have trouble in comparing image details, may have a try for [HandyViewer](https://github.com/xinntao/HandyViewer) - an image viewer that you can switch image with a fixed zoom ratio.
