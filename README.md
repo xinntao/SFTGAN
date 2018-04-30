@@ -1,14 +1,15 @@
-# CVPR18-SFTGAN
+# CVPR18-SFTGAN [[project page]](http://mmlab.ie.cuhk.edu.hk/projects/SFTGAN/)   [[paper]](https://arxiv.org/abs/1804.02815)
 Torch implementation for [Recovering Realistic Texture in Image Super-resolution by Deep Spatial Feature Transform](https://arxiv.org/abs/1804.02815).
 
+Training code is coming soon...
 
-### [[project page]](http://mmlab.ie.cuhk.edu.hk/projects/SFTGAN/)   [[paper]](https://arxiv.org/abs/1804.02815)
-
+---
 ### :stuck_out_tongue_winking_eye: [PyTorch - BasicSR](https://github.com/xinntao/BasicSR)    
 We will provide Pytorch version of SFTGAN later.
 [BasicSR](https://github.com/xinntao/BasicSR) contains basic codes for Super-Resolution. It now has provided basic SR models like SRResNet and SRGAN.
 
-Training code is coming soon...
+---
+
 
 ### Table of Contents
 1. [Introduction](#introduction)
