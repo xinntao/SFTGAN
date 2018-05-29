@@ -5,7 +5,8 @@ Training code will be available before June 10.
 
 ---
 ### :stuck_out_tongue_winking_eye: [PyTorch - BasicSR](https://github.com/xinntao/BasicSR)    
-We will provide Pytorch version of SFTGAN later.
+We will provide Pytorch version of SFTGAN later (all will be available before June 10)
+
 [BasicSR](https://github.com/xinntao/BasicSR) contains basic codes for Super-Resolution. It now has provided basic SR models like SRResNet and SRGAN.
 
 ---
