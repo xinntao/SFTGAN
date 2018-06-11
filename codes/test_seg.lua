@@ -9,6 +9,7 @@ require 'paths'
 require 'image'
 require './util/cudnn_convert_custom'
 local matlab_functions = require './util/matlab_functions'
+local utils = require './util/utils'
 
 local model_path = '../models/OutdoorSceneSeg_bic_iter_30000.t7' -- model
 local test_img_folder_name = 'samples' -- HR images
@@ -58,6 +59,7 @@ for f in paths.files(test_img_folder, '.+%.%a+') do
     local img_base_name = paths.basename(f, ext)
     print(idx, img_base_name)
     local img = image.load(paths.concat(test_img_folder, f), 3, 'float')
+    img = utils.modcrop(img, 8, 'CHW') -- segmentation model will downsize 8x
     -- get bicubic-ed image (the implementation is slow, you can use matlab to generate first)
     img = matlab_functions.imresize(img, 1/4, true)
     img = matlab_functions.imresize(img, 4, true)
