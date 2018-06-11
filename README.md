@@ -8,6 +8,14 @@ The pytorch version of SFTGAN, including training and testing codes, is in [PyTo
 ---
 This repo is the original torch implementation (test code) for [Recovering Realistic Texture in Image Super-resolution by Deep Spatial Feature Transform](https://arxiv.org/abs/1804.02815).
 
+## Feature Modulation
+(How feature modulation come?)
+
+(Conditional Batch Normalization (image style transfer, VQA) -> FiLM)
+
+(The connection with dynamic filter / attention models / spatial transform network)
+
+Our SFT layer is motived by Conditional Normalization, which is used in ...
 
 ### Table of Contents
 1. [Introduction](#introduction)
