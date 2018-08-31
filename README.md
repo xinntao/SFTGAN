@@ -53,8 +53,8 @@ We test our model with Titan X/XP GPU.
 If you find the code and datasets useful in your research, please cite:
 
     @inproceedings{wang2018sftgan,
-        author = {Xintao Wang, Ke Yu, Chao Dong and Chen Change Loy},
-        title = {Recovering Realistic Texture in Image Super-resolution by Deep Spatial Feature Transform},
+        author = {Wang, Xintao and Yu, Ke and Dong, Chao and Loy, Chen Change},
+        title = {Recovering realistic texture in image super-resolution by deep spatial feature transform},
         booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
         year = {2018}
 
