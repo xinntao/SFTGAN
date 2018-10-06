@@ -1,6 +1,6 @@
 # SFTGAN [[project page]](http://mmlab.ie.cuhk.edu.hk/projects/SFTGAN/)   [[paper]](https://arxiv.org/abs/1804.02815)
 
-### :stuck_out_tongue_winking_eye: [PyTorch - BasicSR](https://github.com/xinntao/BasicSR) 
+### :stuck_out_tongue_winking_eye: [PyTorch - BasicSR](https://github.com/xinntao/BasicSR)
 The pytorch version of SFTGAN, including training and testing codes, is in [PyTorch - BasicSR](https://github.com/xinntao/BasicSR).
 
 **BasicSR** contains basic codes for Super-Resolution. It has also provided basic SR models like SRResNet, SRGAN and etc.
@@ -32,7 +32,7 @@ We have explored the use of semantic segmentation maps as categorical prior for 
 
 A Spatial Feature Transform (SFT) layer has been proposed to efficiently incorporate the categorical conditions into a CNN network.
 
-<img src='imgs/network_structure.png' align="center">
+<img src='figures/network_structure.png' align="center">
 
 ### Requirements and Dependencies
 - [Torch](http://torch.ch/docs/getting-started.html)
@@ -42,7 +42,7 @@ A Spatial Feature Transform (SFT) layer has been proposed to efficiently incorpo
 ### Test
 We test our model with Titan X/XP GPU.
 
-**Note that** our model is limited to some outdoor scenes. It is an unsatisfying limitation that we need to relax in future. 
+**Note that** our model is limited to some outdoor scenes. It is an unsatisfying limitation that we need to relax in future.
 
 1. Download segmentation model (OutdoorSceneSeg_bic_iter_30000.t7) and SFT-GAN model (SFT-GAN.t7) from <a href="https://drive.google.com/drive/folders/1kFxjStgGxrKCdNzaa0Cwje5gR3OR-q1r?usp=sharing" target="_blank">google drive</a>. Put them in the `model` folder.
 1. There are 2 sample images in `data/samples` folder. You can put your images inside this folder.
