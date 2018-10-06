@@ -1,4 +1,4 @@
--- test code for segmentation
+-- Segmentation codes for generating segmentation probability maps for SFTGAN
 
 require 'torch'
 require 'nn'
@@ -11,7 +11,7 @@ require './util/cudnn_convert_custom'
 local matlab_functions = require './util/matlab_functions'
 local utils = require './util/utils'
 
-local model_path = '../models/OutdoorSceneSeg_bic_iter_30000.t7' -- model
+local model_path = '../pretrained_models/segmentation_bic_torch.t7' -- model
 local test_img_folder_name = 'samples' -- HR images
 
 local test_img_folder = '../data/'..test_img_folder_name
@@ -37,9 +37,7 @@ cudnn_convert_custom(net, cudnn)
 net:cuda()
 net:evaluate()
 
-local idx = 0
-
--- lookup_table is a double RGB tensor #categories * 3
+-- lookup_table is a double RGB tensor, categories * 3
 local lookup_table = torch.Tensor({
    {153, 153, 153}, -- 0, background
    {0, 255, 255}, --1, sky
@@ -53,6 +51,7 @@ local lookup_table = torch.Tensor({
    })
 lookup_table = lookup_table / 255
 
+local idx = 0
 for f in paths.files(test_img_folder, '.+%.%a+') do
     idx = idx + 1
     local ext = paths.extname(f)

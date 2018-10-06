@@ -1,3 +1,5 @@
+-- Codes for testing SFTGAN
+
 require 'torch'
 require 'nn'
 require 'cudnn'
@@ -9,24 +11,24 @@ require './util/cudnn_convert_custom'
 local matlab_functions = require './util/matlab_functions'
 local utils = require './util/utils'
 
-local model_name = 'sft-gan'
 local test_img_folder = 'samples'
+local model_path = '../pretrained_models/SFTGAN_torch.t7'
 
-local model_path = '../models/'..model_name..'.t7'
 local test_img_path = '../data/'..test_img_folder
 local seg_prob_path = '../data/'..test_img_folder..'_segprob'
-local save_path = '../data/rlt_'..test_img_folder..'_'..model_name
+local save_path = '../data/'..test_img_folder..'_result'
 if not paths.dirp(save_path) then paths.mkdir(save_path) end
 
-local sft_gan = torch.load('../models/SFT-GAN.t7')
-local condition_net = sft_gan['condition_net']
-local sr_net = sft_gan['sr_net']
+local sftgan = torch.load(model_path)
+local condition_net = sftgan['condition_net']
+local sft_net = sftgan['sft_net']
+
 cudnn_convert_custom(condition_net, cudnn)
-cudnn_convert_custom(sr_net, cudnn)
+cudnn_convert_custom(sft_net, cudnn)
 condition_net:evaluate()
-sr_net:evaluate()
+sft_net:evaluate()
 condition_net = condition_net:cuda()
-sr_net = sr_net:cuda()
+sft_net = sft_net:cuda()
 
 local idx = 0
 for f in paths.files(test_img_path, '.+%.%a') do
@@ -41,9 +43,9 @@ for f in paths.files(test_img_path, '.+%.%a') do
     local seg_input = seg_input:cuda()
     local img_input = img_LR:view(1, table.unpack(img_LR:size():totable())):cuda()
     local shared_condition = condition_net:forward(seg_input)
-    local G_output = sr_net:forward({img_input, shared_condition}):squeeze():float()
+    local G_output = sft_net:forward({img_input, shared_condition}):squeeze():float()
 
-    local new_name = img_base_name..'_'..model_name..'.png'
+    local new_name = img_base_name..'_rlt.png'
     image.save(paths.concat(save_path, new_name), G_output)
     print(idx, new_name)
 
@@ -51,6 +53,6 @@ for f in paths.files(test_img_path, '.+%.%a') do
     seg_input = nil; img_input = nil;
     shared_condition = nil; G_output = nil
     condition_net:clearState()
-    sr_net:clearState()
+    sft_net:clearState()
     collectgarbage()
 end
