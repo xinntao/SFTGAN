@@ -1,10 +1,6 @@
 
 
 *.pyc
-*.t7
-*.caffemodel
-*.mat
-*.npy
 
 # latex
 *.aux
