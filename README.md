@@ -16,15 +16,16 @@ For full **training and testing** codes, please refer to  [BasicSR](https://gith
         month = {June},
         year = {2018}
     }
-<p align="center">
-  <img src="figures/qualitative_cmp.jpg">
-</p>
 
 ## Table of Contents
 1. [Quick Test](#quick-test)
 1. [Spatial Feature Modulation](#spatial-feature-modulation)
 1. [Semantic Categorical Prior](#semantic-categorical-prior)
 1. [OST dataset](#ost-dataset)
+
+<p align="center">
+  <img src="figures/qualitative_cmp.jpg">
+</p>
 
 ## Quick Test
 It provides Torch and PyTorch versions. Recommend the PyTorch version.
