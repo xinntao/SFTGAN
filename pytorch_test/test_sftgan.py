@@ -1,5 +1,5 @@
 '''
-Segmentation codes for testing SFTGAN
+Codes for testing SFTGAN
 '''
 
 import os
