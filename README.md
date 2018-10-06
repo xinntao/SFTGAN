@@ -10,7 +10,7 @@ For full **training and testing** codes, please refer to  [BasicSR](https://gith
 #### BibTeX
 
     @InProceedings{wang2018sftgan,
-        author = {Wang, Xintao and Yu, Ke and Dong, Chao and Change Loy, Chen},
+        author = {Wang, Xintao and Yu, Ke and Dong, Chao and Loy, Chen Change},
         title = {Recovering realistic texture in image super-resolution by deep spatial feature transform},
         booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
         month = {June},
