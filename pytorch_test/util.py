@@ -9,7 +9,6 @@ import cv2
 import torch
 from torchvision.utils import make_grid
 
-
 ####################
 # miscellaneous
 ####################

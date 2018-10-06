@@ -12,8 +12,8 @@ import architectures as arch
 
 # options
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
-# model_path = '../pretrained_models/SFTGAN_torch.pth'  # torch version
-model_path = '../pretrained_models/SFTGAN_noBN_OST_bg.pth'  # pytorch version
+model_path = '../pretrained_models/SFTGAN_torch.pth'  # torch version
+# model_path = '../pretrained_models/SFTGAN_noBN_OST_bg.pth'  # pytorch version
 
 test_img_folder_name = 'samples'  # image folder name
 device = torch.device('cuda')  # if you want to run on CPU, change 'cuda' -> 'cpu'

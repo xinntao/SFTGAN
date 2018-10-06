@@ -5,6 +5,7 @@ Basic blocks for architectures
 from collections import OrderedDict
 import torch.nn as nn
 
+
 def act(act_type, inplace=True, neg_slope=0.2, n_prelu=1):
     # helper selecting activation
     # neg_slope: for leakyrelu and init of prelu
